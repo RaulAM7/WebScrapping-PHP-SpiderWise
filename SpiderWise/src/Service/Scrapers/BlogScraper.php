@@ -10,7 +10,6 @@ class BlogScraper extends BaseScraper
     public function scrapeBlogPosts(string $url): array
     {
         $crawler = $this->client->request('GET', $url);
-
         $data = $crawler->filter('article')
                         ->each(function ($node) 
         {
@@ -23,15 +22,15 @@ class BlogScraper extends BaseScraper
 
         return $data;
     }
-    
+
     public function scrapeCompanies(string $url): array
     {
         $crawler = $this->client->request('GET', $url);
-
         $data = $crawler->filter('.company-list')->each(function ($node) {
             return [
-                'name' => $node->filter('a.b')->text(''), 
-                'link' => $node->filter('a.b')->attr('href'), 
+                'html' => $node->outerHtml(),
+                'name' => $node->filter('a.b')->text(''),
+                'link' => $node->filter('a.b')->attr('href'),
                 'category' => $node->filter('p')->text(''),
             ];
         });
