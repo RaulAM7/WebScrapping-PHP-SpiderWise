@@ -26,7 +26,7 @@ Sigue estos pasos para clonar y configurar el proyecto:
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/RaulAM7/WebScrapping-SpiderWise.git
+   git clone https://github.com/RaulAM7/WebScrapping-PHP-SpiderWise.git
    cd WebScrapping-SpiderWise
    ```
 
