@@ -1,6 +1,8 @@
 
 # **SpiderWise**
 
+![alt text](<SpiderWise/assets/styles/DALL·E 2024-11-28 14.48.32 - A professional and slightly anthropomorphic spider mascot for 'SpiderWise,' inspired by Clippy from Microsoft Office but less 'kawaii.' The spider has.webp>)
+
 SpiderWise es un proyecto de **web scraping** desarrollado con **PHP Symfony** y la biblioteca **HttpBrowser** para recopilar información estructurada desde sitios web. Este repositorio incluye una implementación para scrapear múltiples páginas de un sitio específico y almacenar o analizar los datos extraídos.
 
 ## **Características**
