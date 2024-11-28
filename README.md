@@ -103,5 +103,7 @@ composer require symfony/browser-kit symfony/http-client
 ## **Contribución**
 ¡Las contribuciones son bienvenidas! Por favor, abre un `Issue` o un `Pull Request` para sugerir mejoras o reportar errores.
 
+O si lo prefieres escribeme a raulartilesm@gmail.com
+
 ## **Licencia**
 Este proyecto está licenciado bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
