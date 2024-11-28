@@ -91,10 +91,14 @@ Instaladas con:
 composer require symfony/browser-kit symfony/http-client
 ```
 
-## **Límites y Mejora**
+## **Límites a tener en cuenta**
 - **Tiempo de ejecución:** Si el scraping incluye muchas páginas, ajusta el tiempo de ejecución con `set_time_limit()` o usa un comando Symfony para correr en segundo plano.
 - **Evitar bloqueos:** Agrega pausas (`sleep`) entre solicitudes para evitar saturar el servidor objetivo.
-- **Escalabilidad:** Implementa almacenamiento en base de datos (Doctrine) para manejar datos masivos.
+
+## **Próximas updates!**
+- **Escalabilidad:** Implementar almacenamiento en base de datos (Doctrine) para manejar datos masivos.
+- **Mutabilidad:** Implementar más tipos de scrapeo de múltiples de tipos de fuentes
+- **Flexibilidad:** Implementar cronjob para que la ejecución de los scrappings pueda ser flexible y no se limite a una ejecución 
 
 ## **Contribución**
 ¡Las contribuciones son bienvenidas! Por favor, abre un `Issue` o un `Pull Request` para sugerir mejoras o reportar errores.
