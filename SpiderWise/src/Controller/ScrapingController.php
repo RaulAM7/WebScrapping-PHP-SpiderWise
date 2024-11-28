@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+set_time_limit(300);
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,7 +17,7 @@ class ScrapingController extends AbstractController
 
     public function __construct(BlogScraper $blogScraper)
     {
-        $this->blogScraper = $blogScraper; 
+        $this->blogScraper = $blogScraper;
     }
 
     #[Route('/scrape-blog', name: 'scrape_blog')]
@@ -33,16 +35,21 @@ class ScrapingController extends AbstractController
     }
 
     #[Route('/scrape-companies', name: 'scrape_companies')]
-    public function companies(): Response
+    public function allCompanies(): Response
     {
-        $companies_scraped = $this->blogScraper->scrapeCompanies('https://www.apte.org/empresas');
+
+        $companies_scraped = $this->blogScraper->scrapeMultiplePagesCompanies(
+            'https://www.apte.org/empresas/',
+            1,
+            3
+        );
+
 
         dd($companies_scraped);
 
-        return $this->render('scraping/companies-scraping.html.twig', [
+        return $this->render('scraping/companies-all.html.twig', [
             'controller_name' => 'ScrapingController',
             'companies' => $companies_scraped,
         ]);
     }
-
 }
