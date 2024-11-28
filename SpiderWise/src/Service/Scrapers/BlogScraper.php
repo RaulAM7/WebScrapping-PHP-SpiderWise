@@ -28,12 +28,11 @@ class BlogScraper extends BaseScraper
     {
         $crawler = $this->client->request('GET', $url);
 
-        // Seleccionar cada "company-list" y extraer la información
         $data = $crawler->filter('.company-list')->each(function ($node) {
             return [
-                'name' => $node->filter('a.b')->text(''), // Nombre de la empresa
-                'link' => $node->filter('a.b')->attr('href'), // Enlace a la empresa
-                'category' => $node->filter('p')->text(''), // Categoría de la empresa
+                'name' => $node->filter('a.b')->text(''), 
+                'link' => $node->filter('a.b')->attr('href'), 
+                'category' => $node->filter('p')->text(''),
             ];
         });
 
