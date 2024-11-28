@@ -23,10 +23,11 @@ class ScrapingController extends AbstractController
     public function index(): Response
     {
 
-        $data_extracted = $this->blogScraper->scrapeBlogPosts('https://techcrunch.com/');
+        $blog_post_scraped = $this->blogScraper->scrapeBlogPosts('https://techcrunch.com/');
 
-        return $this->render('scraping/index.html.twig', [
+        return $this->render('scraping/blog-scraping.html.twig', [
             'controller_name' => 'ScrapingController',
+            'posts' => $blog_post_scraped,
         ]);
     }
 }
